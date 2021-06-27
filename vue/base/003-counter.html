@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h1>当前计数 {{ counter }}</h1>
+  <button v-on:click="counter++">++</button>
+  <button v-on:click="counter--">--</button>
+  <button @click="multiply">*2</button>
+  <button @click="divide">/2</button>
+</div>
+<script src="/WebLearn/plugins/vue/js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      counter: 0
+    },
+    methods: {
+      // 乘运算
+      multiply: function () {
+        this.counter = this.counter * 2
+      },
+      // 除运算
+      divide: function () {
+        this.counter = this.counter / 2
+      }
+    }
+  })
+</script>
+</body>
+</html>

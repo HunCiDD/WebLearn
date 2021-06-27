@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h1>{{ message }}</h1>
+  <!-- v-once 只会初始化展示。后续message变化，不同步变化 -->
+  <h1 v-once>{{ message }}</h1>
+  <!-- v-html 会将数据与html方式解析 -->
+  <h1 v-html="url"></h1>
+  <!-- v-text 会覆盖标签内的文本内容-->
+  <h2>{{ message }}, hdd</h2>
+  <h2 v-text="message">, hdd</h2>
+  <!--  v-pre 显示原本html中的文本内容，不进行数据变化更新 -->
+  <h2 v-pre>{{ message }}</h2>
+</div>
+<script src="/WebLearn/plugins/vue/js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue',
+      url: '<a href="www.baidu.com">百度一下</a>'
+    }
+  })
+</script>
+</body>
+</html>

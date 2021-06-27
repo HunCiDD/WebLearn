@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <h1>{{ message }}</h1>
+  <!-- v-cloak 斗篷 -->
+  <h1 v-cloak>{{ message }}</h1>
+
+</div>
+<script src="/WebLearn/plugins/vue/js/vue.js"></script>
+<script>
+  /*
+  v-cloak
+  在Vue解析之前，h1标签存在一个v-cloak属性
+  在Vue解析之后，h1标签没有v-cloak属性，即删除这个属性
+  */
+  setTimeout(function () {
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue',
+      }
+    })
+  }, 1000)
+
+</script>
+</body>
+</html>
